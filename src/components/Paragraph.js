@@ -4,7 +4,7 @@ import React from 'react'
 function Paragraph({content}) {
   
   return (
-        <p>{content}</p>
+        <p className='font-monospace fs-3 text fw-lighter'>{content}</p>
     )
 }
 
