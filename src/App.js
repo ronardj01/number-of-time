@@ -1,23 +1,20 @@
-import logo from './logo.svg';
+import React, {useState} from 'react'
 import './App.css';
+import Paragraph from './components/Paragraph'
+import Head from './components/Head';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import IncrementButton from './components/IncrementButton';
 
 function App() {
+  let [number, setNumber] = useState(0)
+
+  let incrementNumber = () => setNumber(++number)
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='d-flex flex-column align-items-center mt-5'>
+      <Head />
+      <Paragraph content={number}/>
+      <IncrementButton whenClick={incrementNumber}/>
     </div>
   );
 }
